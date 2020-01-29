@@ -1,0 +1,1 @@
+Show tthe present working directory.his command is pwd and give the ubicacion.
