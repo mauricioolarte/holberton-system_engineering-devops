@@ -1,2 +1,2 @@
-0 string HOLBERTON
-!:mime --mime-type Holberton data
+0	string	HOLBERTON
+!:mime Holberton
