@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lRa | cut -f 9 -d " "|find -empty
+ls -aR -1 | find -empty | cut -f 2 -d "/"
