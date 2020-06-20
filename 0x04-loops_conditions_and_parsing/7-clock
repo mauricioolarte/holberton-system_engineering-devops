@@ -11,5 +11,5 @@ do
 		echo $minutes
 		minutes=$((minutes+1))
 	done
-	minutes=0
+	minutes=1
 done
