@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#this script print holberton School and hi at de nineth repetition.
+i=0
+while [ $i -lt 10 ]
+do
+	if [ $i == 8 ]
+	then
+		echo "Hi"
+	else
+	    echo "Holberton School"
+	fi
+	i=$((i+1))
+done

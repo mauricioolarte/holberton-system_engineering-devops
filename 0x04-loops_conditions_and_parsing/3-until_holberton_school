@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#this script print a Holbeton School ten times whit until loop.
+i=0
+until [ $i == 10 ]
+do
+	echo "Holberton School"
+	i=$((i+1))
+done
