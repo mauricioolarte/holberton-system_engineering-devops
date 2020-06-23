@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#this scrip is for kill a process.
+id_process="$(pgrep -f 4-to_inf)"
+kill "$id_process"
