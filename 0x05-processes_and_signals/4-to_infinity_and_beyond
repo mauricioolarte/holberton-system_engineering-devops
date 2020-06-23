@@ -4,5 +4,5 @@ i=1
 while [ i ]
 do
 	echo "To infinity and beyond"
-	sleep 2s
+	sleep 2
 done
