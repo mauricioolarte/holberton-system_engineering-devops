@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#this scrip kill a process.
+id_process="$(pgrep -f 7-highlander)"
+kill -s KILL "$id_process"
