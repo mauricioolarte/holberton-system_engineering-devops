@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#this script open a listener conection beetween por 98.
+nc -l 98
