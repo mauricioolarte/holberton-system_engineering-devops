@@ -1,7 +1,7 @@
 # this create a file
 $mode = 0744
-$owner = "www-data"
-$group = "www-data"
+$owner = 'www-data'
+$group = 'www-data'
 $str = 'I love Puppet'
 
 file {'/tmp/holberton':
