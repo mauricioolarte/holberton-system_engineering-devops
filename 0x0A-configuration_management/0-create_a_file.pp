@@ -5,7 +5,7 @@ $group = "www-data"
 $str = "I love Puppet"
 
 file {'/tmp/holberton':
-  ensure  => present,
+  ensure  => file,
   mode    => $mode,
   owner   => $owner,
   group   => $group,
