@@ -3,5 +3,5 @@
 apt update
 apt-get -y install nginx
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
-sed '/^listen [0-9]/c"listen 80 default_server;/g1" ' /etc/nginx/sites-enabled/default
-sed '/^listen [[]/c"listen [::]:80 default_server;/g1" ' /etc/nginx/sites-enabled/default
+sed 's/^\tlisten [0-9]/c"listen 80 default_server;"/g1 ' /etc/nginx/sites-enabled/default
+sed 's/^\tlisten [[]/c"listen [::]:80 default_server;"/g1 ' /etc/nginx/sites-enabled/default
