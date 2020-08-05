@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # this script transfers a file from our client to a server.
-if [ "$#" -eq 4 ]
+if [ "$#" < 3 ]
 then
     scp -i "$4" "$1" "$3@$2":~/
 else
