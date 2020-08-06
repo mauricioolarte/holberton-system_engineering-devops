@@ -6,10 +6,7 @@ sudo service ngninx start
 
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
 
-sed -i '1 s/^\tlisten [0-9]/\tlisten 80 default_server;/' /etc/nginx/sites-enabled/default
-sed -i '1 s/^\tlisten [[]/\tlisten [::]:80 default_server;/' /etc/nginx/sites-enabled/default
+set_301="\\\tlocation /redirect_me {\n\t\t return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
 
-set_301="\\\tlocation  /redirect_me {\n\t\treturn 301 https://www.youtube.com;\n\t}\n"
-
-sudo sed -i "38i $set_301" /etc/nginx/sites-enabled/default
+sudo sed -i "38i $set_301" /etc/nginx/sites-avalaible/default
 sudo service nginx restart
