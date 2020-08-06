@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#web debugin
+curl 0:80
+netstat -lpn
+top
+apache2 -v
+sudo service apache2 start
+curl 0:80
