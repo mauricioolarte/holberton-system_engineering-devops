@@ -1,7 +1,3 @@
 #!/usr/bin/env bash
 #web debugin
-sudo docker exec -ti 47ca3994a491 netstat -lpn
-sudo docker exec -ti 47ca3994a491 top
-sudo docker exec -ti 47ca3994a491 apache2 -v
 sudo docker exec -ti 47ca3994a491 sudo service apache2 start
-curl 0:8080
