@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 #web debugin
-sed '/^listen/c\listen 80' /etc/apache2/ports.conf
+sudo service apache2 start
 #sed -i 's/^ServerName localhost/c\ServerName localhost 80' /etc/apache2/ports.conf
