@@ -1,10 +1,7 @@
 #!/usr/bin/env bash
 #web debugin
-sudo docker run -p 8080:80 -d -it holbertonschool/265-0
-sudo docker ps
-curl 0:8080
-sudo docker exec -ti eff7d93a5bc9 netstat -lpn
-sudo docker exec -ti eff7d93a5bc9 top
-sudo docker exec -ti eff7d93a5bc9 apache2 -v
-sudo docker exec -ti eff7d93a5bc9 sudo service apache2 start
+sudo docker exec -ti 47ca3994a491 netstat -lpn
+sudo docker exec -ti 47ca3994a491 top
+sudo docker exec -ti 47ca3994a491 apache2 -v
+sudo docker exec -ti 47ca3994a491 sudo service apache2 start
 curl 0:8080
