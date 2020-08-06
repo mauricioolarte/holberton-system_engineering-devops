@@ -2,9 +2,9 @@
 #this scrip install and cofigure a NGINX web server.
 apt-get -y update
 apt-get -y install nginx
-sudo service ngninx start
+#sudo service ngninx start
 
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
+echo "Holberton School" > /var/www/html/index.html
 
 set_301="\\\tlocation /redirect_me {\n\t\t return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
 
