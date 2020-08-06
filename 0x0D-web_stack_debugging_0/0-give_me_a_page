@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 #web debugin
-curl 0:80
+curl 0:8080
+sudo docker exec -ti eff7d93a5bc9 /bin/bash
 netstat -lpn
 top
 apache2 -v
 sudo service apache2 start
-curl 0:80
+exit
+curl 0:8080
