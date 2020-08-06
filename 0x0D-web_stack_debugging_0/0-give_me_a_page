@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 #web debugin
-sudo docker exec -ti 47ca3994a491 sudo service apache2 start
+sed -i '1 s/^listen/c\listen 80' /etc/apache2/ports.conf
+#sed -i 's/^ServerName localhost/c\ServerName localhost 80' /etc/apache2/ports.conf
