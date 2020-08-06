@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 #this scrip install and cofigure a NGINX web server.
-sudo apt-get clean all
 sudo apt-get -y update
-sudo apt-get -y upgrade
 apt-get -y install nginx
 echo "Holberton School" > /var/www/html/index.nginx-debian.html
 sed -i '1 s/^\tlisten [0-9]/\tlisten 80 default_server;/' /etc/nginx/sites-enabled/default
