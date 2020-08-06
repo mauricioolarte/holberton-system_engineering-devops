@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #this scrip install and cofigure a NGINX web server.
+sudo apt-get clean all
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y install nginx
