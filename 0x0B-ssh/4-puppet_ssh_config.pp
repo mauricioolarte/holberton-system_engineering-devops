@@ -10,5 +10,4 @@ file_line {'turn of password auth':
   ensure => present,
   path   => '~/.ssh/config',
   line   => 'IdentityFile ~/.ssh/holberton',
-  match  => '^IdentityFile',
   }
