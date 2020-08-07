@@ -4,7 +4,7 @@ sudo apt-get -y update
 sudo apt-get -y install nginx
 sudo service nginx start
 
-sudo echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sudo echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
 
 
 set_301="location /redirect_me {\n\treturn 301 https://www.youtube.com;\n\t}"
