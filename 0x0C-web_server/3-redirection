@@ -2,10 +2,11 @@
 #this scrip install and cofigure a NGINX web server.
 sudo apt-get -y update
 sudo apt-get -y install nginx
+sudo service nginx start
 
-echo "Holberton School" > /var/www/html/index.nginx-debian.html
+sudo echo "Holberton School" > /var/www/html/index.nginx-debian.html
 
 
-set_301="location = /redirect_me {\n\treturn 301 https://www.youtube.com;\n\t}"
-sed -i "/server_name _/a$set_301" /etc/nginx/sites-enabled/default
+set_301="location /redirect_me {\n\treturn 301 https://www.youtube.com;\n\t}"
+sudo sed -i "/server_name _/a$set_301" /etc/nginx/sites-enabled/default
 sudo service nginx restart
