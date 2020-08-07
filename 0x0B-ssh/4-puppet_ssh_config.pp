@@ -6,7 +6,7 @@ file_line {'turn of password auth':
   match  => '^PasswordAuthentication',
   }
 
-file_line {'turn of password auth':
+file_line {'Declare identity file':
   ensure => present,
   path   => '/etc/ssh/ssh_config',
   line   => 'IdentityFile ~/.ssh/holberton',
