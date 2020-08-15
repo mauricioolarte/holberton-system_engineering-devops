@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #this scrip instal an confugure a load balacer HAProxy.
 apt-get update
-apt-get -y install haproxy=1.7.\*
+apt-get -y install haproxy=1.6.\*
 
 echo "ENABLED=1" >> /etc/default/haproxy
 echo "frontend firstbalance\nbind *:80\noption forwardfor\ndefault_backend webservers" >> /etc/haproxy/haproxy.cfg
