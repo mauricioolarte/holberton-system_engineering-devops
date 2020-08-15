@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # this kill process the nginx.
+sudo service nginx status
 sudo pkill -f nginx & wait "$!"
 sudo sed -i "s/listen 8080 default_server;/listen 80 default_server;/" /etc/nginx/sites-enabled/default
-sudo service nginx restart
