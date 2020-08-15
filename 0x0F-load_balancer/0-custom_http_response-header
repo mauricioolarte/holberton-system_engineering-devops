@@ -19,7 +19,9 @@ sed -i "/server_name _/a$set_404" /etc/nginx/sites-available/default
 
 sudo service nginx restart
 
-name=$(hostnamectl | grep 'Static hostname' | cut -d ':' -f 2)
-header="add_header X-Served-By $name;"
+
+#name=$(hostnamectl | grep 'Static hostname' | cut -d ':' -f 2)
+
+header="add_header X-Served-By $HOSTNAME;"
 sudo sed -i "32i$header" /etc/nginx/nginx.conf
 sudo service nginx restart
