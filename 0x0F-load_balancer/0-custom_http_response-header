@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2154
 #this scrip set a custom HTTP header in nginx server.
 name=$(hostnamectl | grep 'Static hostname' | cut -d ':' -f 2)
 header="add_header X-Served-By $name"
