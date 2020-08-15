@@ -7,8 +7,8 @@ apt-get -y install haproxy=1.6.\*
 echo "ENABLED=1" >> /etc/default/haproxy
 
 var="frontend firstbalance\nbind *:80\noption forwardfor\ndefault_backend webservers" 
-sed -i -e "$var" /etc/haproxy/haproxy.cfg
+sed -i -e "$a$var" /etc/haproxy/haproxy.cfg
 
 var1="backend webservers \nbalance roundrobin\nserver 1526-web-01 35.185.14.17:80 check\nserver 1526-web-02 34.73.91.94:80 check\noption httpchk" 
-sed -i -e "$var1" /etc/haproxy/haproxy.cfg
+sed -i -e "$a$var1" /etc/haproxy/haproxy.cfg
 sudo service haproxy restart
