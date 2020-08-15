@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#this scrip instal an confugure a load balacer HAProxy.
+apt-get update
+apt-get -y install haproxy=1.7.\*
+
+echo "ENABLED=1" >> /etc/default/haproxy
+echo "frontend firstbalance\nbind *:80\noption forwardfor\ndefault_backend webservers" >> /etc/haproxy/haproxy.cfg
+
+echo "backend webservers\nbalance roundrobin\nserver 1526-web-01 35.185.14.17:80:80\nserver 1526-web-02 34.73.91.94:80\nserver 1526-web-01 35.185.14.17:80 check\nserver 1526-web-02 34.73.91.94:80 check\noption httpchk" >> /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
