@@ -2,6 +2,6 @@
 # shellcheck disable=SC2154
 #this scrip set a custom HTTP header in nginx server.
 name=$(hostnamectl | grep 'Static hostname' | cut -d ':' -f 2)
-header="add_header X-Served-By $name"
+header="add_header X-Served-By $name;"
 sudo sed -i "32i$header" /etc/nginx/nginx.conf
 sudo service nginx restart
