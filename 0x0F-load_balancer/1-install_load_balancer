@@ -11,8 +11,6 @@ echo "        default_backend webservers" >> /etc/haproxy/haproxy.cfg
 
 echo "backend webservers" >> /etc/haproxy/haproxy.cfg
 echo "        balance roundrobin" >> /etc/haproxy/haproxy.cfg
-echo "        server 1526-web-01 35.185.14.17:80:80" >> /etc/haproxy/haproxy.cfg
-echo "        server 1526-web-02 34.73.91.94:80" >> /etc/haproxy/haproxy.cfg
 echo "        server 1526-web-01 35.185.14.17:80 check" >> /etc/haproxy/haproxy.cfg
 echo "        server 1526-web-02 34.73.91.94:80 check" >> /etc/haproxy/haproxy.cfg 
 echo "        option httpchk" >> /etc/haproxy/haproxy.cfg
