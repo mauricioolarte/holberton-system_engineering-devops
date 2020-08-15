@@ -1,6 +1,23 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2154
 #this scrip set a custom HTTP header in nginx server.
+
+sudo apt-get -y update
+sudo apt-get -y install nginx
+sudo service nginx start
+
+sudo echo "Holberton School" | sudo tee /var/www/html/index.nginx-debian.html
+
+
+set_301="location /redirect_me {\n\treturn 301 https://www.youtube.com;\n\t}"
+sudo sed -i "/server_name _/a$set_301" /etc/nginx/sites-enabled/default
+sudo service nginx restart
+
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/404.html
+set_404="error_page 404 /404.html;\n\tlocation = /404.html {\n\troot /usr/share/nginx/html;\n\tinternal;\n\t}"
+sed -i "/server_name _/a$set_404" /etc/nginx/sites-enabled/default
+
+
 name=$(hostnamectl | grep 'Static hostname' | cut -d ':' -f 2)
 header="add_header X-Served-By $name;"
 sudo sed -i "32i$header" /etc/nginx/nginx.conf
