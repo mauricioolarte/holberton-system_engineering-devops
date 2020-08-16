@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
 # this kill process the nginx.
-sudo pkill -f nginx & wait "$!"
 grep -lr listen /etc/nginx/* | xargs sed -i "s/8080/80/"
 /etc/init.d/nginx restart
