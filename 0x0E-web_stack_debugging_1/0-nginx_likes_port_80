@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # this kill process the nginx.
+/etc/init.d/nginx status
 sudo pkill -f nginx & wait "$!"
-sudo service nginx start
-sudo sed -i "s/listen 8080 default_server;/listen 80 default_server;/" /etc/nginx/sites-enabled/default
-#sudo sed -i "s/listen \[::\]:8080 default_server ipv6only=on;/listen [::]:80 default_server;/" /etc/nginx/sites-enabled/default
-#sudo sed -i "s/listen \[::\]:8080 default_server ipv6only=on;/listen [::]:80 default_server;/" /etc/nginx/sites-available/default
+#sudo service nginx start
+grep -lr listen /etc/nginx/* | xargs sed -i "s/8080/80/"
 sudo service nginx restart
