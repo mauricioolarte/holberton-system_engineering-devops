@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2116
+# show subdomains.
+#
+domains() {
+    # print informtion about 
+    names=( "lb-01" "www" "web-01" "web-02")
+    if [ -z "$2" ]
+    then
+	for i in "${names[@]}"
+	do
+	    dig $i.$1 | grep -A1 'ANSWER SECTION:' | tail -n 1| awk '{split($0, elements, "."); print "The subdomain " elements[1] " is a " $4 " record and points to " $5}'
+	done
+    else
+	dig "$2.$1" | grep -A1 'ANSWER SECTION:' | tail -n 1| awk '{split($0, elements, "."); print "The subdomain" elements[0] "is a " $4 "record and points to " $5}'
+    fi
+}
+domains "$1" "$2"
