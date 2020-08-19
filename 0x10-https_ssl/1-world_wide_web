@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# shellcheck disable=SC2116
+# shellcheck disable=SC2086
 # show subdomains.
 #
 domains() {
