@@ -4,7 +4,7 @@
 #
 domains() {
     # print informtion about 
-    names=( "lb-01" "www" "web-01" "web-02")
+    names=("www" "lb-01" "web-01" "web-02")
     if [ -z "$2" ]
     then
 	for i in "${names[@]}"
