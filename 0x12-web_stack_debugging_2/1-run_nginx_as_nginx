@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #this change the permiser of nginx to no sudo user.
-sudo chmod 777 /etc/nginx/nginx.conf
-sudo sed -i "s/^#user.*/user nginx;/" /etc/nginx/nginx.conf
-sudo chmod 000 /etc/nginx/nginx.conf
-sudo deluser nginx sudo
-sudo service nginx restart
+pkill apache2
+chmod 400 /etc/nginx/nginx.conf
+chown nginx:nginx /etc/nginx/nginx.conf
+sed -i "/s/80/8080/" /etc/nginx/sites-available/default
+sudo -u nginx service nginx restart
