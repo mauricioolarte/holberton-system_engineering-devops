@@ -3,6 +3,6 @@
 exportname="backup.sql"
 database="tyrell_corp"
 pwd=$1
-mysqldump -u root -p"$pwd" --opt $database > $exportname
+mysqldump -u root -p"$pwd" --all-databases > $exportname
 now="$(date +'%d-%m-%Y')"
 tar -czvf "$now".tar.gz backup.sql
