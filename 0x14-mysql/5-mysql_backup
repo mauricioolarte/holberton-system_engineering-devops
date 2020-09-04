@@ -1,8 +1,4 @@
 #!/bin/bash
 #this make a bakup of database.
-exportname="backup.sql"
-database="tyrell_corp"
-pwd=$1
-mysqldump -u root -p"$pwd" --all-databases > $exportname
-now="$(date +'%d-%m-%Y')"
-tar -czvf "$now".tar.gz backup.sql
+mysqldump -uroot -p"$1" --all-databases > backup.sql
+sudo tar -czvf "$(date +%d-%m-%Y)".tar.gz backup.sql
