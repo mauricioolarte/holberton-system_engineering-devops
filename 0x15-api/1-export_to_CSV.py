@@ -4,6 +4,7 @@
 """
 
 import requests
+import csv
 import sys
 
 if __name__ == "__main__":
@@ -15,8 +16,8 @@ if __name__ == "__main__":
     uri_to_req = ('http://jsonplaceholder.typicode.com/todos?userId=' +
                   str(sys.argv[1]))
     req = requests.get(uri_to_req)
-    with open('USER_ID.csv', 'w') as csv_file:
-        for task in req.json():
-            csv_row = [str(sys.argv[1]), name_employe, task.get('completed'),
-                    task.get('title')]
-            csv_file.writerow(csv_row)
+    csv_file = csv.writer(open('USER_ID.csv', 'w'))
+    for task in req.json():
+        csv_row = [str(sys.argv[1]), name_employe, task.get('completed'),
+                task.get('title')]
+        csv_file.writerow(csv_row)
