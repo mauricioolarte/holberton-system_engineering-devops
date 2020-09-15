@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" this module make a request to https://jsonplaceholder.typicode.com/users'
+    and print todo list
+"""
 
 import requests
 import sys
