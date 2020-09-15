@@ -19,7 +19,7 @@ if __name__ == "__main__":
     with open('USER_ID.csv', 'w') as f:
         writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         for task in req.json():
-            USER_ID = int(sys.argv[1])
+            USER_ID = task.get('userId')
             USERNAME = name_employe
             TASK_COMPLETED_STATUS = str(task.get('completed'))
             TASK_TITLE = task.get('title')
