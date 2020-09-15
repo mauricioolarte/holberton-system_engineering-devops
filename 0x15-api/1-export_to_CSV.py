@@ -16,8 +16,7 @@ if __name__ == "__main__":
     uri_to_req = ('http://jsonplaceholder.typicode.com/todos?userId=' +
                   str(sys.argv[1]))
     req = requests.get(uri_to_req)
-    csv.register_dialect('unixpwd', delimiter=':', quoting=csv.QUOTE_NONE)
-    with open('USER_ID.csv', 'w', newline='') as f:
+    with open('USER_ID.csv', 'w') as f:
         writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         for task in req.json():
             USER_ID = str(sys.argv[1])
