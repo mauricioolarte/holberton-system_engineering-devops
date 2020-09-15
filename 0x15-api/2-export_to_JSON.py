@@ -26,4 +26,4 @@ if __name__ == "__main__":
     resp = {}
     resp[str(sys.argv[1])] = list
     with open('USER_ID.json', 'w') as file:
-        json.dump(resp, file )
+        json.dump(resp, file)
