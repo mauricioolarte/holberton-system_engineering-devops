@@ -12,7 +12,7 @@ if __name__ == "__main__":
     employees = requests.get('http://jsonplaceholder.typicode.com/users')
     for employ in employees.json():
         if employ.get('id') == int(sys.argv[1]):
-            name_employe = employ.get('name')
+            name_employe = employ.get('username')
     uri_to_req = ('http://jsonplaceholder.typicode.com/todos?userId=' +
                   str(sys.argv[1]))
     req = requests.get(uri_to_req)
