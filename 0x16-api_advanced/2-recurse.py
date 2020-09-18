@@ -2,8 +2,9 @@
 """ make request to redit api """
 import requests
 
-parameters = {'limit': 100, 'count': 0}
-listres = []
+parameters = {'limit': 100}
+
+
 def recurse(subreddit, hot_list=[]):
     """ make request to subredit and return numbers of subscribers"""
     headers = {'User-Agent': 'Mauricio'}
@@ -16,9 +17,7 @@ def recurse(subreddit, hot_list=[]):
             hot_list.append((answer_list_10[top].get('data').get('title')))
         if len(answer_list_10) >= 100:
             parameters['after'] = r.json().get('data').get('after')
-            # parameters['count'] += 100 
             recurse(subreddit, hot_list)
-        else:
-            return(hot_list)
+        return(hot_list)
     else:
         print('None')
