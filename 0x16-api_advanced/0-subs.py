@@ -9,4 +9,7 @@ def number_of_subscribers(subreddit):
     url = 'http://www.reddit.com/r/' + subreddit + '/about/.json'
     r = requests.get(url, headers=headers)
     answer = r.json().get('data').get('subscribers')
-    return(answer)
+    if answer is None:
+        return(0)
+    else:
+        return(answer)
